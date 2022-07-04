@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
 
   before_action :require_login
   #sorceryが作成するメソッド。ログインしてない時not_authenticatedメソッドを発火する
-
+  helper_method :exist_setting
 
   
   protected
