@@ -7,7 +7,7 @@ class SettingsController < ApplicationController
   def create
     @setting = Setting.new(setting_params)
     if @setting.save
-      redirect_to new_setting_path
+      redirect_to edit_setting_path(id: current_user.id)
     else
       render :new
     end

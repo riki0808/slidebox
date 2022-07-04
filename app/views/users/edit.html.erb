@@ -1,0 +1,27 @@
+<h2 class="option-title">アカウント設定</h2>
+
+<%= form_with model: @user do |f| %>
+
+  <dl class="option-form">
+    <dt class="option-form_title">名前</dt>
+    <dd><%= f.text_field :name, class:"option-form_desc", value: @user.name %></dd>
+  </dl>
+
+  <dl class="option-form">
+    <dt class="option-form_title">メールアドレス</dt>
+    <dd><%= f.text_field :email, class:"option-form_desc", value: @user.email %></dd>
+  </dl>
+
+  <dl class="option-form">
+    <dt class="option-form_title">会社名</dt>
+    <dd><%= f.text_field :company, class:"option-form_desc", value: @user.company %></dd>
+  </dl>
+
+  <dl class="option-form">
+    <dt class="option-form_title">パスワード</dt>
+    <dd><%= f.text_field :password, class:"option-form_desc", value: @user.password %></dd>
+  </dl>
+
+  <%= f.submit "保存する", class:"option-submit" %>
+
+<% end %>

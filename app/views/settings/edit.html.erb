@@ -1,0 +1,22 @@
+<h2 class="option-title">設定</h2>
+
+<%= form_with model: @setting do |f| %>
+
+  <dl class="option-form">
+    <dt class="option-form_title">フォント</dt>
+    <dd><%= f.text_field :font, class:"option-form_desc", value: @setting.font %></dd>
+  </dl>
+
+  <dl class="option-form">
+    <dt class="option-form_title">メインカラー</dt>
+    <dd><%= f.text_field :main_color, class:"option-form_desc", value: @setting.main_color %></dd>
+  </dl>
+
+  <dl class="option-form">
+    <dt class="option-form_title">アクセントカラー</dt>
+    <dd><%= f.text_field :sub_color, class:"option-form_desc", value: @setting.sub_color %></dd>
+  </dl>
+
+  <%= f.submit "保存する", class:"option-submit" %>
+
+<% end %>
