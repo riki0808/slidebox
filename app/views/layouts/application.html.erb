@@ -1,16 +1,54 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Slidebox</title>
+    <title>SlideBox</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
   </head>
 
   <body>
-    <%= yield %>
+    <% unless current_page?(login_path) %>
+      <%= render 'partial/navbar' %>
+
+      <div class="c-inner">
+      
+        <div class="c-wrap">
+        
+          <aside class="c-sidebar">
+            <% if exist_setting == nil %>
+              <%= link_to new_setting_path, class:'c-sidebar_item' do %>
+                <i class="fa fa-plus c-sidebar_icon"></i><span>設定</span>
+              <% end %>
+            <% else %>
+              <%= link_to edit_setting_path(id: current_user.id), class:'c-sidebar_item' do %>
+                <i class="fa fa-plus c-sidebar_icon"></i><span>設定</span>
+              <% end %>
+            <% end %>
+
+          </aside>
+
+          <div class="c-main">
+
+            <%= yield %>
+
+          </div>
+
+        
+        </div>
+
+      </div>
+    
+
+    <% else %>
+
+      <%= yield %>
+
+    <% end %>
+
+
+    <%= javascript_pack_tag 'home/common' %>
   </body>
 </html>

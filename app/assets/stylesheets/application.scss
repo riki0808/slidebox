@@ -1,0 +1,200 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+// @import '~@fortawesome/fontawesome-free/scss/fontawesome';
+img {
+  vertical-align: bottom;
+}
+
+a {
+  text-decoration: none;
+}
+a:hover {
+  opacity: .7;
+}
+button:hover {
+  opacity: .7;
+}
+* {
+  font-weight: 600;
+}
+
+.yu_gothic{
+	font-family :
+	YuGothic,    /* Mac用 */
+	'Yu Gothic', /* Windows用 */
+	sans-serif;
+}
+.yu_mincho{
+	font-family :
+	YuMincho,    /* Mac用 */
+	'Yu Mincho', /* Windows用 */
+	serif;
+}
+.arial {
+  font-family: "Arial";
+}
+.avenir {
+  font-family: "Avenir Next", Verdana;
+}
+.din {
+  font-family: din-condensed, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.century {
+  font-family: century-gothic, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+.corporate {
+  font-family: corporate-logo-ver2, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.nav {
+  background-image: linear-gradient(90deg, rgba(0, 0, 255, 1), rgba(68, 143, 195, 1));
+}
+
+.navbar {
+  width: 93%;
+  height: 60px;
+  margin: auto;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.nav-link {
+  display: inline-flex;
+}
+.nav-img {
+  width: 110px;
+  height: auto;
+  vertical-align: bottom;
+}
+.nav-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e6e6e6;
+  padding: 0 20px;
+  border-radius: 5px;
+  color: #606060;
+  font-size: 12px;
+}
+.nav-right_name {
+  border-right: 1px solid #606060;
+  padding-right: 30px;
+}
+.nav-right_setting {
+  padding-left: 10px;
+  cursor: pointer;
+}
+.nav-right-btn {
+  display: inline-block;
+  padding: 0 10px;
+}
+
+
+.nav-global {
+  opacity: 0;
+  visibility: hidden;
+  transition: .6s;
+  width: 200px;
+  position: absolute;
+  right: 0;
+  top: 70px;
+  list-style: none;
+  background-color: #fff;
+  border-radius: 10px;
+  z-index: 10;
+}
+.nav-global.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+.nav-global_item:hover  {
+  background-color:#e6e6e6 ;
+}
+.nav-global_item:nth-last-child(n+3) {
+  border-bottom: 1px dashed #606060;
+}
+.nav-global_item:last-of-type {
+  border-top: 1px solid #606060;
+}
+.nav-global_item-link {
+  display: block;
+  width: 100%;
+  padding: 10px 0 10px 20px;
+  font-size: 14px;
+  color: #606060;
+}
+
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  opacity: 0;
+  visibility: hidden;
+}
+.overlay.is-active {
+  visibility: visible;
+}
+
+
+.c-inner {
+  width: 100%;
+  margin: auto;
+}
+.c-wrap {
+  display: flex;
+}
+.c-sidebar {
+  width: 256px;
+  background-color: #f3f4f6;
+}
+.c-sidebar_item {
+  color: #1a1a1a;
+  display: block;
+  padding: 20px 0 20px 30px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.c-sidebar_item:hover {
+  background-color: #e6eaed;
+}
+.c-sidebar_icon {
+  margin-right: 10px;
+  color: #fff;
+}
+.c-sidebar_title {
+  font-size: 26px;
+  font-weight: 300;
+  border-bottom: 1px solid #999;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.c-main {
+  width: calc(100% - 256px);
+  padding: 40px;
+  min-height: calc(100vh - 60px);
+}
