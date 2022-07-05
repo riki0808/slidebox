@@ -18,6 +18,9 @@
         <div class="c-wrap">
         
           <aside class="c-sidebar">
+            <%= link_to root_path, class:'c-sidebar_item' do %>
+              <i class="fa fa-plus c-sidebar_icon"></i><span>新規作成</span>
+            <% end %>
             <% if exist_setting == nil %>
               <%= link_to new_setting_path, class:'c-sidebar_item' do %>
                 <i class="fa fa-plus c-sidebar_icon"></i><span>設定</span>

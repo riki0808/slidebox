@@ -1,0 +1,149 @@
+<div class="doc-wrap">
+
+  <div class="doc-form_frame">
+    <%= form_with model: @doc, class:"doc-form" do |f| %>
+      <dl class="doc-form_item">
+        <dt class="doc-form_item-title">アップロード</dt>
+        <dd><%= f.file_field :main, class:"doc-form_item-desc doc-form_item-desc-file" %></dd>
+      </dl>
+      <dl class="doc-form_item">
+        <dt class="doc-form_item-title">資料タイトル</dt>
+        <dd><%= f.text_field :title, class:"doc-form_item-desc doc-form_item-desc-text" %></dd>
+      </dl>
+      <dl class="doc-form_item">
+        <dt class="doc-form_item-title">資料枚数(自動計算)</dt>
+        <dd><%= f.number_field :sheet, class:"doc-form_item-desc doc-form_item-desc-sheet" %>枚</dd>
+      </dl>
+
+      <div class="doc-form_line"></div>
+
+      <dl class="doc-form_item">
+        <dt class="doc-form_item-title">サイズ</dt>
+        <dd class="doc-form_item-desc doc-form_item-desc-size">
+          <div>
+            <%= f.radio_button :size, "16:9" %>
+            <%= f.label :size, "１６：９", {style: "display: inline-block;"} %>
+          </div>
+          <div>
+            <%= f.radio_button :size, "4:3" %>
+            <%= f.label :size, "４：３", {style: "display: inline-block;"} %>
+          </div>
+        </dd>
+      </dl>
+      <dl class="doc-form_item">
+        <dt class="doc-form_item-title">納期</dt>
+        <dd><%= f.date_field :deadline, class:"doc-form_item-desc doc-form_item-desc-text" %></dd>
+      </dl>
+      <dl class="doc-form_item">
+        <dt class="doc-form_item-title">依頼内容詳細</dt>
+        <dd><%= f.text_area :detail, class:"doc-form_item-desc doc-form_item-desc-textarea" %></dd>
+      </dl>
+
+      <p class="doc-form_atention">
+      上記依頼内容、右記の見積もりで良ければ下のボタンを押してください希望納期内に資料ボックスにてダウンロードできます。
+      </p>
+
+      <%= f.submit "使用作成を依頼する", class:"doc-submit" %>
+
+    <% end %>
+  </div>
+
+  <div class="doc-preview">
+    <p class="doc-preview_title">見積書プレビュー</p>
+    <div class="doc-preview_frame">
+
+      <div class="doc-preview_frame-main">
+
+        <p class="preview_title">見積書</p>
+        <div class="preview_top-wrap">
+          <div class="preview_top-wrap-left">
+            <p class="preview_top-wrap-left-text"><%= current_user.company =%>御中</p>
+          </div>
+          <div class="preview_top-wrap-right">
+            <div class="preview_top-wrap-right-image-frame">
+              <%= image_tag 'cone-logo.jpg', class:"preview_top-wrap-right-image" %>
+            </div>
+            <div class="preview_top-wrap-right-txtbox">
+              <%= image_tag 'cone-shadow.jpg', class:"preview_top-wrap-right-shadow" %>
+              <p class="preview_top-wrap-right-txt preview_top-wrap-right-txt-mb ">株式会社Cone</p>
+              <p class="preview_top-wrap-right-txt">〒530-0027</p>
+              <p class="preview_top-wrap-right-txt">大阪府大阪市北区堂山町1-5</p>
+              <p class="preview_top-wrap-right-txt preview_top-wrap-right-txt-mb ">梅田三共ビル7階</p>
+              <p class="preview_top-wrap-right-txt">見積書番号:2022060499</p>
+              <p class="preview_top-wrap-right-txt">発行日:2022/07/04</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="preview_item-name">件名:【ライトプラン】資料作成代行費用</p>
+
+        <p class="preview_mitumori">御見積金額 (仮)99,000 円</p>
+
+        <div class="preview_breakdown">
+
+          <dl class="preview_breakdown-item preview_breakdown-item-w7">
+            <dt class="preview_breakdown-title">品目</dt>
+            <dd class="preview_breakdown-desc">(仮)採用ピッチ資料_資料作成費</dd>
+          </dl>
+
+          <dl class="preview_breakdown-item preview_breakdown-item-w1">
+            <dt class="preview_breakdown-title">単価</dt>
+            <dd class="preview_breakdown-desc">3,000</dd>
+          </dl>
+
+          <dl class="preview_breakdown-item preview_breakdown-item-w1">
+            <dt class="preview_breakdown-title">数量</dt>
+            <dd class="preview_breakdown-desc">(仮)30</dd>
+          </dl>
+
+          <dl class="preview_breakdown-item preview_breakdown-item-w1">
+            <dt class="preview_breakdown-title">価格</dt>
+            <dd class="preview_breakdown-desc">(仮)90,000</dd>
+          </dl>
+        
+        </div>
+
+        <div class="preview-detail">
+
+          <div class="preview-detail_wrap">
+            <p class="preview-detail_title">小計</p>
+            <p class="preview-detail_desc">90,000 円</p>
+          </div>
+
+          <div class="preview-detail_wrap">
+            <p class="preview-detail_title">消費税</p>
+            <p class="preview-detail_desc">9,000 円</p>
+          </div>
+
+          <div class="preview-detail_wrap">
+            <p class="preview-detail_title">合計</p>
+            <p class="preview-detail_desc">99,000 円</p>
+          </div>
+
+          <div class="preview-detail-total-wrap">
+            <p class="preview-detail-total-title">内訳</p>
+            <p class="preview-detail-total-subtitle">10%対象</p>
+            <p class="preview-detail-total-desc">90,000 円<br>消費税 9,000 円</p>
+          </div>
+
+        </div>
+
+        <p>備考</p>
+        <div class="preview_remarks">
+          <p>【納期】7月</p>
+          <p>【仕様】頂戴する資料に基づく</p>
+          <p style="margin-bottom: 10px;">【条件】 修正2回、ロゴ素材等ご支給</p>
+          <p>・上記プランは初回取引のみの適用となります。2回目以降のプラン料金は変動致します。</p>
+          <p>・初稿制作後の3ページ以下のページ削除修正は対応可能ですが、4ページ以上のページ削除修正は対応出来かねますのでご了承ください。</p>
+          <p>・本案件の申し込み後のキャンセルに関してはキャンセル費として申し込み金額の全額が発生いたします。</p>
+        </div>
+
+
+      </div>
+
+      <button class="preview_button">見積書をダウンロードする</button>
+
+    </div>
+  </div>
+  
+</div>

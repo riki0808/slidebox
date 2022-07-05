@@ -1,3 +1,230 @@
 // Place all the styles related to the docs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.doc-wrap {
+  display: flex;
+}
+.doc-form_frame {
+  width: 350px;
+  margin-right: 40px;
+}
+.doc-form {
+
+}
+.doc-form_item {
+  margin-bottom: 15px;
+  font-size: 14px;
+  
+}
+.doc-form_item-title {
+  margin-bottom: 5px;
+  font-weight: 300;
+  color: #1a1a1a;
+}
+.doc-form_item-desc {
+  width: 100%;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-weight: 300;
+}
+.doc-form_item-desc-file {
+
+}
+.doc-form_item-desc-text {
+  border: 1px solid #cccccc;
+}
+.doc-form_item-desc-size {
+  display: flex;
+  align-items: center;
+}
+.doc-form_item-desc-size div:nth-child(1) {
+  margin-right: 30px;
+}
+.doc-form_item-desc-size div label {
+  font-weight: 300;
+}
+.doc-form_item-desc-sheet {
+  border: 1px solid #cccccc;
+  background-color: #f1f1f1;
+  width: 90%!important;
+  margin-right: 20px;
+}
+.doc-form_item-desc-textarea {
+  border: 1px solid #cccccc;
+}
+.doc-submit {
+  font-size: 10px;
+  color: #fff;
+  font-weight: 300;
+  background-color: #448fc3;
+  padding: 10px 0;
+  text-align: center;
+  width: 100%;
+  border-radius: 3px;
+}
+.doc-form_line {
+  width: 100%;
+  height: 1px;
+  background-color: #cccccc;
+  margin: 30px 0;
+}
+.doc-form_atention {
+  font-size: 11px;
+  color: #1a1a1a;
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+
+
+
+.doc-preview {
+  width: 500px;
+}
+.doc-preview_title {
+  font-size: 14px;
+  font-weight: 300;
+}
+.doc-preview_frame {
+  background-color: #f3f4f6;
+  width: 100%;
+  padding: 20px;
+}
+.doc-preview_frame-main {
+  height: 100%;
+  background-color: #fff;
+  font-weight: 300;
+  font-size: 10px;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+}
+.preview_button {
+  padding: 8px;
+  background-color: #448fc3;
+  color: #fff;
+  font-size: 10px;
+  display: block;
+  margin: auto;
+}
+
+
+// ===================== ここから見積書のスタイリング =====================
+
+.preview_title {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.preview_top-wrap {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.preview_top-wrap-left {
+
+}
+.preview_top-wrap-left-text {
+
+}
+.preview_top-wrap-right {
+
+}
+.preview_top-wrap-right-image-frame {
+  width: 60px;
+  margin-bottom: 10px;
+}
+.preview_top-wrap-right-image {
+  width: 100%;
+}
+.preview_top-wrap-right-txtbox {
+  position: relative;
+  z-index: 10;
+}
+.preview_top-wrap-right-shadow {
+  position: absolute;
+  width: 60px;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+.preview_top-wrap-right-txt {
+  position: relative;
+  z-index: 10;
+}
+.preview_top-wrap-right-txt-mb {
+  margin-bottom: 5px;
+}
+.preview_item-name {
+  margin-bottom: 20px;
+}
+.preview_mitumori {
+  border-bottom: .5px solid #000;
+  margin-bottom: 15px;
+}
+.preview_breakdown {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.preview_breakdown-item {
+  
+}
+.preview_breakdown-item-w7 {
+  width: 58%;
+}
+.preview_breakdown-item-w7 dd {
+  justify-content: left;
+}
+.preview_breakdown-item-w1 {
+  width: 14%;
+}
+.preview_breakdown-title {
+  border-bottom: .5px solid #000;
+}
+.preview_breakdown-desc {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.preview-detail {
+  width: 190px;
+  margin-left: auto;
+  margin-bottom: 20px;
+}
+.preview-detail_wrap {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: .5px solid #000;
+}
+.preview-detail_title {
+
+}
+.preview-detail_desc {
+
+}
+.preview-detail-total-wrap {
+  display: flex;
+  border-bottom: .5px solid #000;
+  padding-top: 8px;
+}
+.preview-detail-total-title {
+  width: 25%;
+}
+.preview-detail-total-subtitle {
+  width: 35%;
+}
+.preview-detail-total-desc {
+  width: 40%;
+  text-align: right;
+}
+
+
+
+.preview_remarks {
+  padding: 10px;
+  border: .5px solid #000;
+}
+
+// ===================== ここから見積書のスタイリング =====================
