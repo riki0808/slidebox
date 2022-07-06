@@ -2,7 +2,6 @@ let navGlobal = document.getElementById('navGlobal');
 let set = document.getElementById('js-setting');
 let overLay = document.getElementById('overLay');
 
-console.log('aaaaaa');
 
 if ( set != null ) {
 
