@@ -4,15 +4,15 @@
     <%= form_with model: @doc, class:"doc-form" do |f| %>
       <dl class="doc-form_item">
         <dt class="doc-form_item-title">アップロード</dt>
-        <dd><%= f.file_field :main, class:"doc-form_item-desc doc-form_item-desc-file" %></dd>
+        <dd><%= f.file_field :main, class:"doc-form_item-desc doc-form_item-desc-file", id:"js-up-file" %></dd>
       </dl>
       <dl class="doc-form_item">
         <dt class="doc-form_item-title">資料タイトル</dt>
-        <dd><%= f.text_field :title, class:"doc-form_item-desc doc-form_item-desc-text" %></dd>
+        <dd><%= f.text_field :title, class:"doc-form_item-desc doc-form_item-desc-text", id:"js-doc-title", placeholder:"作りたい資料ジャンルを入力してください" %></dd>
       </dl>
       <dl class="doc-form_item">
         <dt class="doc-form_item-title">資料枚数(自動計算)</dt>
-        <dd><%= f.number_field :sheet, class:"doc-form_item-desc doc-form_item-desc-sheet" %>枚</dd>
+        <dd><%= f.number_field :sheet, class:"doc-form_item-desc doc-form_item-desc-sheet", id:"js-pdf-count" %>枚</dd>
       </dl>
 
       <div class="doc-form_line"></div>
@@ -32,7 +32,7 @@
       </dl>
       <dl class="doc-form_item">
         <dt class="doc-form_item-title">納期</dt>
-        <dd><%= f.date_field :deadline, class:"doc-form_item-desc doc-form_item-desc-text" %></dd>
+        <dd><%= f.date_field :deadline, class:"doc-form_item-desc doc-form_item-desc-text", id:"js-deadline-input" %></dd>
       </dl>
       <dl class="doc-form_item">
         <dt class="doc-form_item-title">依頼内容詳細</dt>
@@ -77,13 +77,13 @@
 
         <p class="preview_item-name">件名:【ライトプラン】資料作成代行費用</p>
 
-        <p class="preview_mitumori">御見積金額 (仮)99,000 円</p>
+        <p class="preview_mitumori">御見積金額 <span id="js-show-money"></span> 円</p>
 
         <div class="preview_breakdown">
 
           <dl class="preview_breakdown-item preview_breakdown-item-w7">
             <dt class="preview_breakdown-title">品目</dt>
-            <dd class="preview_breakdown-desc">(仮)採用ピッチ資料_資料作成費</dd>
+            <dd class="preview_breakdown-desc" id="js-doc-title-preview"></dd>
           </dl>
 
           <dl class="preview_breakdown-item preview_breakdown-item-w1">
@@ -93,12 +93,12 @@
 
           <dl class="preview_breakdown-item preview_breakdown-item-w1">
             <dt class="preview_breakdown-title">数量</dt>
-            <dd class="preview_breakdown-desc">(仮)30</dd>
+            <dd class="preview_breakdown-desc" id="js-set-sheet"></dd>
           </dl>
 
           <dl class="preview_breakdown-item preview_breakdown-item-w1">
             <dt class="preview_breakdown-title">価格</dt>
-            <dd class="preview_breakdown-desc">(仮)90,000</dd>
+            <dd class="preview_breakdown-desc" id="js-price"></dd>
           </dl>
         
         </div>
@@ -107,30 +107,30 @@
 
           <div class="preview-detail_wrap">
             <p class="preview-detail_title">小計</p>
-            <p class="preview-detail_desc">90,000 円</p>
+            <p class="preview-detail_desc"><span id="js-subtotal"></span> 円</p>
           </div>
 
           <div class="preview-detail_wrap">
             <p class="preview-detail_title">消費税</p>
-            <p class="preview-detail_desc">9,000 円</p>
+            <p class="preview-detail_desc"><span id="js-tax"></span> 円</p>
           </div>
 
           <div class="preview-detail_wrap">
             <p class="preview-detail_title">合計</p>
-            <p class="preview-detail_desc">99,000 円</p>
+            <p class="preview-detail_desc"><span id="js-total"></span> 円</p>
           </div>
 
-          <div class="preview-detail-total-wrap">
+          <%# <div class="preview-detail-total-wrap">
             <p class="preview-detail-total-title">内訳</p>
             <p class="preview-detail-total-subtitle">10%対象</p>
             <p class="preview-detail-total-desc">90,000 円<br>消費税 9,000 円</p>
-          </div>
+          </div> %>
 
         </div>
 
         <p>備考</p>
         <div class="preview_remarks">
-          <p>【納期】7月</p>
+          <p>【納期】<span id="js-deadline-output"></span></p>
           <p>【仕様】頂戴する資料に基づく</p>
           <p style="margin-bottom: 10px;">【条件】 修正2回、ロゴ素材等ご支給</p>
           <p>・初稿制作後の3ページ以下のページ削除修正は対応可能ですが、4ページ以上のページ削除修正は対応出来かねますのでご了承ください。</p>
