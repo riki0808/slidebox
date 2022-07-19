@@ -1,7 +1,7 @@
 <div class="doc-wrap">
 
   <div class="doc-form_frame">
-    <%= form_with model: @doc, data: { confirm: 'Are you sure?' }, class:"doc-form" do |f| %>
+    <%= form_with model: @doc, class:"doc-form" do |f| %>
       <dl class="doc-form_item">
         <dt class="doc-form_item-title">アップロード</dt>
         <dd>
@@ -132,13 +132,13 @@
 
         </div>
 
-        <p>備考</p>
+        <p style="margin-bottom: 0;">備考</p>
         <div class="preview_remarks">
-          <p>【納期】<span id="js-deadline-output"></span></p>
-          <p>【仕様】頂戴する資料に基づく</p>
+          <p style="margin-bottom: 0;">【納期】<span id="js-deadline-output"></span></p>
+          <p style="margin-bottom: 0;">【仕様】頂戴する資料に基づく</p>
           <p style="margin-bottom: 10px;">【条件】 修正2回、ロゴ素材等ご支給</p>
-          <p>・初稿制作後の3ページ以下のページ削除修正は対応可能ですが、4ページ以上のページ削除修正は対応出来かねますのでご了承ください。</p>
-          <p>・本案件の申し込み後のキャンセルに関してはキャンセル費として申し込み金額の全額が発生いたします。</p>
+          <p style="margin-bottom: 0;">・初稿制作後の3ページ以下のページ削除修正は対応可能ですが、4ページ以上のページ削除修正は対応出来かねますのでご了承ください。</p>
+          <p style="margin-bottom: 0;">・本案件の申し込み後のキャンセルに関してはキャンセル費として申し込み金額の全額が発生いたします。</p>
         </div>
 
 
@@ -150,3 +150,10 @@
   </div>
   
 </div>
+
+<p>テスト</p>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("p").text("成功！！");
+  });
+</script>

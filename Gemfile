@@ -60,3 +60,5 @@ gem "pry", "~> 0.14.1"
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'data-confirm-modal'
+gem 'jquery-rails'
+gem 'bootstrap-sass', '3.4.1'

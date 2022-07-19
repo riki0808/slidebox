@@ -1,21 +1,21 @@
-<div class="nav">
-  <nav class='navbar'>
-    <%= link_to root_path, {class: 'nav-link'} do %>
-      <%= image_tag 'logo.svg', {class: 'nav-img'} %>
+<div class="p-nav">
+  <nav class='p-navbar'>
+    <%= link_to root_path, {class: 'p-nav-link'} do %>
+      <%= image_tag 'logo.svg', {class: 'p-nav-img'} %>
     <% end %>
-    <div class="nav-right">
-      <p class="nav-right_name"><%= current_user.name %></p>
-      <p class="nav-right_setting" id="js-setting">設定</p>
+    <div class="p-nav-right">
+      <p class="p-nav-right_name"><%= current_user.name %></p>
+      <p class="p-nav-right_setting" id="js-setting">設定</p>
     </div>
 
     <div class="overlay" id="overLay"></div>
 
-    <ul class="nav-global" id="navGlobal">
-      <li class="nav-global_item"><%= link_to 'アカウント設定', edit_user_path(id: current_user.id), class:"nav-global_item-link" %></li>
-      <li class="nav-global_item"><a class="nav-global_item-link" target="_blank" href="https://join.slack.com/t/d-base-hq/shared_invite/zt-1a10po5td-0AXtK4aWAdoEg9p~ulh5wA">Slackサポートチャット</a></li>
-      <li class="nav-global_item"><a class="nav-global_item-link" target="_blank" href="https://timerex.net/s/riki_sato/28d890ed">WEBミーティングで質問</a></li>
-      <li class="nav-global_item"><a class="nav-global_item-link" target="_blank" href="https://www.swapab.com/help">ご質問/ご要望はこちら</a></li>
-      <li class="nav-global_item"><%= link_to 'ログアウト', logout_path, method: :delete, class:'nav-global_item-link' %></li>
+    <ul class="p-nav-global" id="navGlobal">
+      <li class="p-nav-global_item"><%= link_to 'アカウント設定', edit_user_path(id: current_user.id), class:"p-nav-global_item-link" %></li>
+      <li class="p-nav-global_item"><a class="p-nav-global_item-link" target="_blank" href="https://join.slack.com/t/d-base-hq/shared_invite/zt-1a10po5td-0AXtK4aWAdoEg9p~ulh5wA">Slackサポートチャット</a></li>
+      <li class="p-nav-global_item"><a class="p-nav-global_item-link" target="_blank" href="https://timerex.net/s/riki_sato/28d890ed">WEBミーティングで質問</a></li>
+      <li class="p-nav-global_item"><a class="p-nav-global_item-link" target="_blank" href="https://www.swapab.com/help">ご質問/ご要望はこちら</a></li>
+      <li class="p-nav-global_item"><%= link_to 'ログアウト', logout_path, method: :delete, class:'p-nav-global_item-link' %></li>
     </ul>
 
   </nav>
