@@ -59,3 +59,4 @@ gem 'sorcery'
 gem "pry", "~> 0.14.1"
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'data-confirm-modal'
