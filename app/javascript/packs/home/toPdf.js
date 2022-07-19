@@ -9,6 +9,6 @@ pdfBtn.addEventListener('click', function(e) {
     let doc = new jsPDF();
     let width = doc.internal.pageSize.width
     doc.addImage(imgData, 'PNG', 10, 10, width * 0.9, 0);
-    doc.save("sample.pdf");
+    doc.save("quotation.pdf");
   });
 }, false);

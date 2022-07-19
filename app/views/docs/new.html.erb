@@ -1,7 +1,7 @@
 <div class="doc-wrap">
 
   <div class="doc-form_frame">
-    <%= form_with model: @doc, class:"doc-form" do |f| %>
+    <%= form_with model: @doc, class:"doc-form", id:"js-doc-form" do |f| %>
       <dl class="doc-form_item">
         <dt class="doc-form_item-title">アップロード</dt>
         <dd>
@@ -47,7 +47,9 @@
       上記依頼内容、右記の見積もりで良ければ下のボタンを押してください希望納期内に資料ボックスにてダウンロードできます。
       </p>
 
-      <%= f.submit "使用作成を依頼する", data: { confirm: 'Are you sure?' }, class:"doc-submit" %>
+      <%= f.submit "使用作成を依頼する", class:"doc-submit", id:"js-doc-submit" %>
+
+      <p class="doc-form_atention" style="opacity:0;" id="js-request-comp">依頼が完了しました！</p>
 
     <% end %>
   </div>
@@ -150,10 +152,3 @@
   </div>
   
 </div>
-
-<p>テスト</p>
-<script type="text/javascript">
-  $(document).ready(function() {
-    $("p").text("成功！！");
-  });
-</script>
