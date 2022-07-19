@@ -15,6 +15,7 @@
  */
 
 // @import '~@fortawesome/fontawesome-free/scss/fontawesome';
+
 img {
   vertical-align: bottom;
 }
@@ -67,7 +68,7 @@ button:hover {
 }
 
 .nav {
-  background-image: linear-gradient(90deg, rgba(0, 0, 255, 1), rgba(68, 143, 195, 1));
+  background-image: linear-gradient(90deg, #008fe9, #66cbc0);
 }
 
 .navbar {

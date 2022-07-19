@@ -1,10 +1,13 @@
 <div class="doc-wrap">
 
   <div class="doc-form_frame">
-    <%= form_with model: @doc, class:"doc-form" do |f| %>
+    <%= form_with model: @doc, data: { confirm: 'Are you sure?' }, class:"doc-form" do |f| %>
       <dl class="doc-form_item">
         <dt class="doc-form_item-title">アップロード</dt>
-        <dd><%= f.file_field :main, class:"doc-form_item-desc doc-form_item-desc-file", id:"js-up-file" %></dd>
+        <dd>
+          <label for="js-up-file" class="doc-form_item-desc-file-label" id="js-file-label">✚PDFをアップロードする</label>
+          <%= f.file_field :main, class:"doc-form_item-desc doc-form_item-desc-file", id:"js-up-file" %>
+        </dd>
       </dl>
       <dl class="doc-form_item">
         <dt class="doc-form_item-title">資料タイトル</dt>
@@ -12,7 +15,8 @@
       </dl>
       <dl class="doc-form_item">
         <dt class="doc-form_item-title">資料枚数(自動計算)</dt>
-        <dd><%= f.number_field :sheet, class:"doc-form_item-desc doc-form_item-desc-sheet", id:"js-pdf-count" %>枚</dd>
+        <dd><span class="doc-form_item-desc doc-form_item-desc-sheet" id="js-pdf-count"></span>枚</dd>
+        <%= f.number_field :sheet, class:"doc-form_item-desc-sheet-hidden", id:"js-hidden-pdf-count" %>
       </dl>
 
       <div class="doc-form_line"></div>
@@ -43,7 +47,7 @@
       上記依頼内容、右記の見積もりで良ければ下のボタンを押してください希望納期内に資料ボックスにてダウンロードできます。
       </p>
 
-      <%= f.submit "使用作成を依頼する", class:"doc-submit" %>
+      <%= f.submit "使用作成を依頼する", data: { confirm: 'Are you sure?' }, class:"doc-submit" %>
 
     <% end %>
   </div>
@@ -57,7 +61,7 @@
         <p class="preview_title">見積書</p>
         <div class="preview_top-wrap">
           <div class="preview_top-wrap-left">
-            <p class="preview_top-wrap-left-text"><%= current_user.company =%>御中</p>
+            <p class="preview_top-wrap-left-text"><%= current_user.company %>御中</p>
           </div>
           <div class="preview_top-wrap-right">
             <div class="preview_top-wrap-right-image-frame">
@@ -70,7 +74,7 @@
               <p class="preview_top-wrap-right-txt">大阪府大阪市北区堂山町1-5</p>
               <p class="preview_top-wrap-right-txt preview_top-wrap-right-txt-mb ">梅田三共ビル7階</p>
               <p class="preview_top-wrap-right-txt">見積書番号:2022060499</p>
-              <p class="preview_top-wrap-right-txt">発行日:2022/07/04</p>
+              <p class="preview_top-wrap-right-txt">発行日:<%= Date.today.strftime("%Y/%m/%d") %></p>
             </div>
           </div>
         </div>

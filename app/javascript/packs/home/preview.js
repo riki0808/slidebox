@@ -32,9 +32,9 @@ function calPage() {
   //合計金額
   let totalText = document.getElementById('js-total');
 
-  setSheet.innerText = getSheet.value;
+  setSheet.innerText = pdfCount.innerText;
 
-  let price = 3000 * getSheet.value;
+  let price = 3000 * pdfCount.innerText;
   pricetext.innerText = price.toLocaleString();
 
   let subtotal = price;
@@ -49,6 +49,10 @@ function calPage() {
   let showMoney = total;
   showMoneyText.innerText = showMoney.toLocaleString();
 
+  //docデータを送信するために！
+  let hiddenPdfCount = document.getElementById('js-hidden-pdf-count');
+  hiddenPdfCount.value = pdfCount.innerText;
+
 }
 
 
@@ -60,7 +64,20 @@ pdf.addEventListener('input', function() {
   reader.readAsBinaryString(pdf.files[0]);
   reader.onloadend = function() {
     let pdfPage = reader.result.match(/\/Type[\s]*\/Page[^s]/g).length;
-    pdfCount.value = pdfPage;
+    pdfCount.innerText = pdfPage;
     calPage();
   }
 }, false);
+
+
+if (pdf) {
+  pdf.addEventListener(
+    "change",
+    function () {
+      let doc = this.files[0];
+      let fileLabel = document.getElementById('js-file-label');
+      fileLabel.textContent = doc.name;
+    },
+    false
+  );
+}

@@ -28,7 +28,16 @@
   font-weight: 300;
 }
 .doc-form_item-desc-file {
-
+  display: none;
+}
+.doc-form_item-desc-file-label {
+  display: inline-block;
+  width: 100%;
+  border: 1px dashed #b2b2b2;
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 5px;
+  cursor: pointer;
 }
 .doc-form_item-desc-text {
   border: 1px solid #cccccc;
@@ -46,8 +55,14 @@
 .doc-form_item-desc-sheet {
   border: 1px solid #cccccc;
   background-color: #f1f1f1;
+  display: inline-block;
+  height: 33px;
+  text-align: right;
   width: 90%!important;
   margin-right: 20px;
+}
+.doc-form_item-desc-sheet-hidden {
+  display: none;
 }
 .doc-form_item-desc-textarea {
   border: 1px solid #cccccc;
