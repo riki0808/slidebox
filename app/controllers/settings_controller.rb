@@ -7,7 +7,7 @@ class SettingsController < ApplicationController
   def create
     @setting = Setting.new(setting_params)
     if @setting.save
-      redirect_to edit_setting_path(id: current_user.id)
+      redirect_to root_path
     else
       render :new
     end
@@ -20,7 +20,7 @@ class SettingsController < ApplicationController
   def update
     @setting = Setting.find(params[:id])
     if @setting.update(setting_params)
-      redirect_to edit_setting_path(id: current_user.id)
+      redirect_to root_path
     else
       render :edit
     end

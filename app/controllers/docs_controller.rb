@@ -8,6 +8,7 @@ class DocsController < ApplicationController
     @doc = Doc.new(doc_params)
     if @doc.save
       RequestMailer.with(doc: @doc.id).request_email.deliver_later
+      RequestMailer.with(doc: @doc.id).thanks_email.deliver_later
       redirect_to root_path
     else
       redirect_to new_setting_path

@@ -13,4 +13,15 @@ class RequestMailer < ApplicationMailer
     )
   end
 
+  def thanks_email
+
+    @doc = Doc.find(params[:doc])
+    mail(
+      subject: 'slideboxのご依頼ありがとうございます',
+      from: Rails.application.credentials.gmail[:user_name],
+      to: @doc.user.email
+    )
+
+  end
+
 end

@@ -4,7 +4,15 @@
 
   <dl class="option-form">
     <dt class="option-form_title">フォント</dt>
-    <dd><%= f.text_field :font, class:"option-form_desc" %></dd>
+    <dd>
+      <%= f.select :font, [
+        ["游ゴシック", "游ゴシック"],
+        ["メイリオ", "メイリオ"],
+        ["Meiryo UI", "Meiryo UI"],
+        ["コーポレート・ロゴ", "コーポレート・ロゴ"]
+        ], include_blank: "選択して下さい", class:"option-form_desc" %>
+    </dd>
+    
   </dl>
 
   <dl class="option-form">

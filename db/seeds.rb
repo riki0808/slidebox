@@ -8,18 +8,60 @@
 User.create(
   [
     {
-      name: "sasano", 
-      email: "aaa@aaa.com", 
+      name: "佐藤立樹", 
+      email: "riki_sato@cone-ntm.com", 
       company: "株式会社CONE",
+      role: 1,
       password: "rikiriki88", 
       password_confirmation: "rikiriki88"
     },
     {
-      name: "佐藤立樹", 
-      email: "qqq@qqq.com", 
-      company: "株式会社SATO",
+      name: "湯浅春樹", 
+      email: "haruki_yuasa@cone-ntm.com", 
+      company: "株式会社CONE",
+      role: 1,
       password: "rikiriki88", 
       password_confirmation: "rikiriki88"
-    }
+    },
+    {
+      name: "佐々野力", 
+      email: "s_riki@cone-ntm.com", 
+      company: "株式会社CONE",
+      role: 1,
+      password: "rikiriki88", 
+      password_confirmation: "rikiriki88"
+    },
+    {
+      name: "田中晴", 
+      email: "haru_tanaka@cone-ntm.com", 
+      company: "株式会社CONE",
+      role: 1,
+      password: "rikiriki88", 
+      password_confirmation: "rikiriki88"
+    },
+    {
+      name: "熊本羽那丸", 
+      email: "hanamaru_kumamoto@cone-ntm.com", 
+      company: "株式会社CONE",
+      role: 1,
+      password: "rikiriki88", 
+      password_confirmation: "rikiriki88"
+    },
+    {
+      name: "山口友貴", 
+      email: "tomoki_yamaguchi@cone-ntm.com", 
+      company: "株式会社CONE",
+      role: 1,
+      password: "rikiriki88", 
+      password_confirmation: "rikiriki88"
+    },
+    {
+      name: "山田太郎", 
+      email: "aaa@aaa.com", 
+      company: "株式会社山田",
+      role: 2,
+      password: "rikiriki88", 
+      password_confirmation: "rikiriki88"
+    },
   ]
 )

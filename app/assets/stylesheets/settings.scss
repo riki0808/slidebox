@@ -7,6 +7,15 @@
 .option-form {
   margin-bottom: 30px;
 }
+.option-form select {
+  border: 1px solid #cccccc;
+  padding: 5px 10px;
+  border-radius: 5px;
+  width: 350px;
+  color: #1a1a1a;
+  font-weight: 300;
+  line-height: 1.5;
+}
 .option-form_title {
   color: #1a1a1a;
   font-weight: 300;

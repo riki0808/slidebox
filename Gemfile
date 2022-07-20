@@ -59,3 +59,5 @@ gem 'sorcery'
 gem "pry", "~> 0.14.1"
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'dotenv-rails'
+gem 'fog-aws'
