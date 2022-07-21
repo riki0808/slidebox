@@ -2,7 +2,7 @@ class RequestMailer < ApplicationMailer
 
   def request_email
 
-    @doc = params[:doc]
+    @doc = Doc.find(params[:doc])
     attachments[@doc.main.file.filename] = { 
       :content => File.read(params[:temp_path])
     }
