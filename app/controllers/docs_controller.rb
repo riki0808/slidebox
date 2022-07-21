@@ -6,10 +6,11 @@ class DocsController < ApplicationController
   
   def create
     @doc = Doc.new(doc_params)
-    if @doc.save
+    if @doc.valid?
       # binding.pry
-      RequestMailer.with(doc: @doc.id, temp_path: doc_params[:main].path).request_email.deliver_later
-      RequestMailer.with(doc: @doc.id).thanks_email.deliver_later
+      RequestMailer.with(doc: @doc.id, temp_path: doc_params[:main].path).request_email.deliver_now
+      RequestMailer.with(doc: @doc.id).thanks_email.deliver_now
+      @doc.save
       redirect_to root_path
     else
       redirect_to new_setting_path
