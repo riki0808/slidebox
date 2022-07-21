@@ -2,13 +2,13 @@ class RequestMailer < ApplicationMailer
 
   def request_email
 
-    @doc = Doc.find(params[:doc])
-    attachments["#{@doc.main.file.basename}.pdf"] = { 
-      :content => File.read("public/#{File.dirname(@doc.main.url)}/#{@doc.main.file.basename}.pdf")
+    @doc = params[:doc]
+    attachments[@doc.main.file.filename] = { 
+      :content => File.read(params[:temp_path])
     }
     mail(
       subject: 'slideboxの依頼がきたよっ',
-      from: Rails.application.credentials.gmail[:user_name],
+      from: ENV['USER_NAME'],
       to: 'c-slide@cone-ntm.com'
     )
   end
@@ -18,7 +18,7 @@ class RequestMailer < ApplicationMailer
     @doc = Doc.find(params[:doc])
     mail(
       subject: 'slideboxのご依頼ありがとうございます',
-      from: Rails.application.credentials.gmail[:user_name],
+      from: ENV['USER_NAME'],
       to: @doc.user.email
     )
 

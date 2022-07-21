@@ -62,6 +62,19 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "slidebox_production"
 
+  config.action_mailer.raise_delivery_errors = true
+  # config.action_mailer.default_url_options = {  host: 'localhost', port: 3000 }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    port:                 587,
+    address:              'smtp.gmail.com',
+    domain:               'gmail.com',
+    user_name:            ENV['USER_NAME'],
+    password:             ENV['PASSWORD'],
+    authentication:       :login,
+    enable_starttls_auto: true
+  }
+
   config.action_mailer.perform_caching = false
 
   # Ignore bad email addresses and do not raise email delivery errors.
