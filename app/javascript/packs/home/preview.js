@@ -96,7 +96,7 @@ docSubmit.onclick = function (e) {
     text: "見積書のダウンロードはしましたか？", //\nでテキストの改行が出来ます
     buttons: {
       cancel: "まだ！",
-      ok: "できた！",
+      ok: "依頼する！",
     },
   };
   swal(options).then(function (value) {
