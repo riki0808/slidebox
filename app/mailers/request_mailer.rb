@@ -8,7 +8,7 @@ class RequestMailer < ApplicationMailer
     }
     mail(
       subject: 'slideboxの依頼がきたよっ',
-      from: ENV['USER_NAME'],
+      from: 's_riki@cone-ntm.com',
       to: 'c-slide@cone-ntm.com'
     )
   end
@@ -18,7 +18,7 @@ class RequestMailer < ApplicationMailer
     @doc = Doc.find(params[:doc])
     mail(
       subject: 'slideboxのご依頼ありがとうございます',
-      from: ENV['USER_NAME'],
+      from: 's_riki@cone-ntm.com',
       to: @doc.user.email
     )
 
