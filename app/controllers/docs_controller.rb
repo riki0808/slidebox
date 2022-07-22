@@ -6,9 +6,9 @@ class DocsController < ApplicationController
   
   def create
     @doc = Doc.new(doc_params)
-    if @doc.valid?
-      # binding.pry
-      RequestMailer.with(doc: @doc.id, temp_path: doc_params[:main].path).request_email.deliver_now
+    if @doc.save
+      FileUtils.cp(params[:main].path, "/tmp/temp.pdf")
+      RequestMailer.with(doc: @doc.id).request_email.deliver_now
       RequestMailer.with(doc: @doc.id).thanks_email.deliver_now
       @doc.save
       redirect_to root_path
