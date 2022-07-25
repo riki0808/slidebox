@@ -87,6 +87,7 @@ if (pdf) {
   );
 }
 
+
 let docSubmit = document.getElementById("js-doc-submit");
 
 docSubmit.onclick = function (e) {
