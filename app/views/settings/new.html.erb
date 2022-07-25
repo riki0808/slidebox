@@ -16,13 +16,19 @@
   </dl>
 
   <dl class="option-form">
-    <dt class="option-form_title">メインカラー</dt>
-    <dd><%= f.text_field :main_color, class:"option-form_desc" %></dd>
+    <dt class="option-form_title">
+      <p class="option-form_title-text">メインカラー</p>
+      <input type="color" class="option-form_title-color" id="js-main-pick">
+    </dt>
+    <dd><%= f.text_field :main_color, class:"option-form_desc", id:"js-main-code" %></dd>
   </dl>
 
   <dl class="option-form">
-    <dt class="option-form_title">アクセントカラー</dt>
-    <dd><%= f.text_field :sub_color, class:"option-form_desc" %></dd>
+    <dt class="option-form_title">
+      <p class="option-form_title-text">アクセントカラー</p>
+      <input type="color" class="option-form_title-color" id="js-sub-pick">
+    </dt>
+    <dd><%= f.text_field :sub_color, class:"option-form_desc", id:"js-sub-code" %></dd>
   </dl>
 
   <%= f.submit "保存する", class:"option-submit" %>

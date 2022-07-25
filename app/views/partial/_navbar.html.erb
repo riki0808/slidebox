@@ -11,10 +11,11 @@
     <div class="overlay" id="overLay"></div>
 
     <ul class="p-nav-global" id="navGlobal">
+      <div class="p-nav-global-profile">
+        <p class="p-nav-global-company"><%= current_user.company %></p>
+        <p class="p-nav-global-name"><%= current_user.name %>様</p>
+      </div>
       <li class="p-nav-global_item"><%= link_to 'アカウント設定', edit_user_path(id: current_user.id), class:"p-nav-global_item-link" %></li>
-      <li class="p-nav-global_item"><a class="p-nav-global_item-link" target="_blank" href="https://join.slack.com/t/d-base-hq/shared_invite/zt-1a10po5td-0AXtK4aWAdoEg9p~ulh5wA">Slackサポートチャット</a></li>
-      <li class="p-nav-global_item"><a class="p-nav-global_item-link" target="_blank" href="https://timerex.net/s/riki_sato/28d890ed">WEBミーティングで質問</a></li>
-      <li class="p-nav-global_item"><a class="p-nav-global_item-link" target="_blank" href="https://www.swapab.com/help">ご質問/ご要望はこちら</a></li>
       <li class="p-nav-global_item"><%= link_to 'ログアウト', logout_path, method: :delete, class:'p-nav-global_item-link' %></li>
     </ul>
 

@@ -129,6 +129,20 @@ p {
   background-color: #fff;
   border-radius: 10px;
   z-index: 10;
+  box-shadow: 0px 0px 11px -7px #333;
+}
+.p-nav-global-profile {
+  padding: 20px 0 20px 20px;
+  color: #606060;
+  font-size: 14px;
+  border-bottom: 1px solid #606060;
+}
+.p-nav-global-company {
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+.p-nav-global-name {
+
 }
 .p-nav-global.is-active {
   opacity: 1;

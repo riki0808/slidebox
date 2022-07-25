@@ -20,6 +20,16 @@
   color: #1a1a1a;
   font-weight: 300;
   margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+.option-form_title-text {
+  margin-right: 15px;
+}
+.option-form_title-color {
+  width: 26px;
+  height: 30px;
+  background: none!important;
 }
 .option-form_desc {
   border: 1px solid #cccccc;

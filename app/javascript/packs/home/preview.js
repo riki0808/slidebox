@@ -102,13 +102,9 @@ docSubmit.onclick = function (e) {
   };
   swal(options).then(function (value) {
     if (value) {
-      docForm.submit();
-    //   let requestComp = document.getElementById('js-request-comp');
-    //   requestComp.style.opacity =  1;
-    //   setTimeout( closeBox , 5000 );
-    //   function closeBox() {
-    //     requestComp.style.opacity = 0;
-    //  }
+      swal('依頼完了しました！').then(function () {
+        docForm.submit();
+      });
     }
   });
 };
