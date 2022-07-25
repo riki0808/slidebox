@@ -27,6 +27,13 @@ let subColorPick = document.getElementById("js-sub-pick");
 let mainColorCode = document.getElementById("js-main-code");
 let subColorCode = document.getElementById("js-sub-code");
 
+if (mainColorPick !== null) {
+  mainColorPick.value = mainColorCode.value
+}
+if (subColorPick !== null) {
+  subColorPick.value = subColorCode.value
+}
+
 function changeColor(code, color) {
   if (code !== null) {
     code.value = color.value;

@@ -14,7 +14,8 @@ class ApplicationController < ActionController::Base
 
   private
   def exist_setting
-    exist_setting = Setting.find_by(user_id: current_user.id)
+    @exist_setting = Setting.find_by(user_id: current_user.id)
+
   end
 
   # def common_user

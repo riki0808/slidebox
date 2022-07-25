@@ -14,11 +14,12 @@ class SettingsController < ApplicationController
   end
 
   def edit
-    @setting = Setting.find(params[:id])
+    @setting = Setting.where(user_id: current_user.setting.user_id)
+    # binding.pry
   end
 
   def update
-    @setting = Setting.find(params[:id])
+    @setting = Setting.where(user_id: current_user.setting.user_id)
     if @setting.update(setting_params)
       redirect_to root_path
     else

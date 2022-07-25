@@ -1,6 +1,6 @@
 <h2 class="option-title">設定</h2>
 
-<%= form_with model: @setting do |f| %>
+<%= form_with model: @setting[0] do |f| %>
 
   <dl class="option-form">
     <dt class="option-form_title">フォント</dt>
@@ -10,7 +10,7 @@
         ["メイリオ", "メイリオ"],
         ["Meiryo UI", "Meiryo UI"],
         ["コーポレート・ロゴ", "コーポレート・ロゴ"]
-        ], include_blank: "選択して下さい", class:"option-form_desc" %>
+        ], include_blank: current_user.setting.font, class:"option-form_desc" %>
     </dd>
     
   </dl>
@@ -20,7 +20,7 @@
       <p class="option-form_title-text">メインカラー</p>
       <input type="color" class="option-form_title-color" id="js-main-pick">
     </dt>
-    <dd><%= f.text_field :main_color, class:"option-form_desc", id:"js-main-code" %></dd>
+    <dd><%= f.text_field :main_color, class:"option-form_desc", id:"js-main-code", :value => current_user.setting.main_color %></dd>
   </dl>
 
   <dl class="option-form">
@@ -28,7 +28,7 @@
       <p class="option-form_title-text">アクセントカラー</p>
       <input type="color" class="option-form_title-color" id="js-sub-pick">
     </dt>
-    <dd><%= f.text_field :sub_color, class:"option-form_desc", id:"js-sub-code" %></dd>
+    <dd><%= f.text_field :sub_color, class:"option-form_desc", id:"js-sub-code", :value => current_user.setting.sub_color %></dd>
   </dl>
 
   <%= f.submit "保存する", class:"option-submit" %>
