@@ -1,18 +1,22 @@
 <%= form_with model: @user, local: true do |f| %>
-  <%= f.label :name, '名前' %>
-  <%= f.text_field :name  %>
+  <dl>
 
-  <%= f.label :company, '会社' %>
-  <%= f.text_field :company  %>
+    <dt><%= f.label :name, '名前', class:"user-new_label" %></dt>
+    <dd><%= f.text_field :name, class:"user-new_inp"  %></dd>
 
-  <%= f.label :email, 'メールアドレス' %>
-  <%= f.text_field :email  %>
+    <dt><%= f.label :company, '会社', class:"user-new_label" %></dt>
+    <dd><%= f.text_field :company, class:"user-new_inp"  %></dd>
 
-  <%= f.label :password, 'パスワード' %>
-  <%= f.password_field :password  %>  
+    <dt><%= f.label :email, 'メールアドレス', class:"user-new_label" %></dt>
+    <dd><%= f.text_field :email, class:"user-new_inp"  %></dd>
 
-  <%= f.label :password_confirmation, 'パスワード確認' %>
-  <%= f.password_field :password_confirmation  %>     
+    <dt><%= f.label :password, 'パスワード', class:"user-new_label" %></dt>
+    <dd><%= f.password_field :password, class:"user-new_inp"  %>  </dd>
 
-  <%= f.submit '登録' %>  
+    <dt><%= f.label :password_confirmation, 'パスワード確認', class:"user-new_label" %></dt>
+    <dd><%= f.password_field :password_confirmation, class:"user-new_inp"  %></dd>
+
+  </dl>
+
+  <%= f.submit '登録', class:"user-new_submit" %>  
 <% end %>

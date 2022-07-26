@@ -1,3 +1,18 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.user-new_label {
+}
+.user-new_inp {
+  border: 1px solid #333;
+  border-radius: 5px;
+  padding: 5px;
+}
+.user-new_submit {
+  margin-top: 40px;
+  display: inline-block;
+  width: 150px;
+  padding: 15px 0;
+  background-color: #e8e8e8;
+  border-radius: 10px;
+}
