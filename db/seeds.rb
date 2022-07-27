@@ -54,14 +54,6 @@ User.create(
       role: 1,
       password: "rikiriki88", 
       password_confirmation: "rikiriki88"
-    },
-    {
-      name: "山田太郎", 
-      email: "aaa@aaa.com", 
-      company: "株式会社山田",
-      role: 2,
-      password: "rikiriki88", 
-      password_confirmation: "rikiriki88"
-    },
+    }
   ]
 )

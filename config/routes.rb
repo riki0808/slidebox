@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+
   root 'docs#new'
   
   resources :users
   resources :settings
   resources :docs
+  resources :password_resets, only: %i[new create edit update]
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'

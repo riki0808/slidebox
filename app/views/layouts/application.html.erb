@@ -15,7 +15,6 @@
   </head>
 
   <body>
-    <% unless current_page?(login_path) %>
       <%= render 'partial/navbar' %>
 
       <div class="c-inner">
@@ -53,11 +52,6 @@
       </div>
     
 
-    <% else %>
-
-      <%= yield %>
-
-    <% end %>
 
 
     <%= javascript_pack_tag 'home/common' %>

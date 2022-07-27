@@ -17,11 +17,15 @@
     <dd><%= f.text_field :company, class:"option-form_desc", value: @user.company %></dd>
   </dl>
 
-<!--
   <dl class="option-form">
     <dt class="option-form_title">パスワード</dt>
-    <dd><%= f.text_field :password, class:"option-form_desc", value: @user.password %></dd>
-  </dl>-->
+    <dd><%= f.text_field :password, class:"option-form_desc" %></dd>
+  </dl>
+
+  <dl class="option-form">
+    <dt class="option-form_title">パスワード確認用</dt>
+    <dd><%= f.text_field :password_confirmation, class:"option-form_desc" %></dd>
+  </dl>
 
   <%= f.submit "保存する", class:"option-submit" %>
 
