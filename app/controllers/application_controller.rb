@@ -17,6 +17,10 @@ class ApplicationController < ActionController::Base
   def exist_setting
     @exist_setting = Setting.find_by(user_id: current_user.id)
   end
+
+  def set_host_from_request
+    ActionMailer::Base.default_url_options = { host: request.host_with_port }
+  end
   
   # def common_user
   #   common_user = User.find_by(user_id: current_user.id)
