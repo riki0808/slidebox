@@ -5,17 +5,20 @@
         <p class="login-title">オンライン資料作成サービス</p>
         <%= image_tag 'logo_blue.svg', {class: 'login-logo'} %>
       </div>
-      <%= form_with url:login_path, class: "login-form-box", method: :post do |f| %>
+      <%= form_with model:@user, url: password_reset_path(@token), local: true, class: "login-form-box", method: :put do |f| %>
         <dl class="login-item">
           <dt class="login-label">メールアドレス</dt>
           <dd class="login-input"><%= f.text_field :email %></dd>
         </dl>
         <dl class="login-item">
           <dt class="login-label">パスワード</dt>
-          <dd class="login-input"><%= f.password_field :password %></dd>
+          <dd class="login-input"><%= f.text_field :password %></dd>
         </dl>
-        <%= f.submit  "ログイン", class: "login-button" %>
-        <%= link_to 'パスワードを忘れた方', new_password_reset_path, class:"login-forgot" %>
+        <dl class="login-item">
+          <dt class="login-label">パスワード確認用</dt>
+          <dd class="login-input"><%= f.text_field :password_confirmation %></dd>
+        </dl>
+        <%= f.submit  "更新する", class: "login-button" %>
       <% end %>
     </div>
 

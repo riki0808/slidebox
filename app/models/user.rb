@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   authenticates_with_sorcery!
+  validates :reset_password_token, uniqueness: true, allow_nil: true
   # validates :email, uniqueness: true, presence: true
   # validates :password, presence: true, on: :create
   # VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]{8,32}\z/i.freeze

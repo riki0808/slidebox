@@ -12,12 +12,12 @@ class ApplicationController < ActionController::Base
     redirect_to login_url
   end
 
+  
   private
   def exist_setting
     @exist_setting = Setting.find_by(user_id: current_user.id)
-
   end
-
+  
   # def common_user
   #   common_user = User.find_by(user_id: current_user.id)
   # end

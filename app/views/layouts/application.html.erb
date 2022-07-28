@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SlideBox</title>
+    <title>slidebox</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
  
     <%= favicon_link_tag('favicon.ico') %>
@@ -15,7 +15,7 @@
   </head>
 
   <body>
-    <% unless current_page?(login_path) %>
+    <% unless current_page?(login_path) || current_page?(new_password_reset_path) || (@token && current_page?(:controller => 'password_resets', :action => 'edit', :id => @token)) %>
       <%= render 'partial/navbar' %>
 
       <div class="c-inner">
@@ -58,6 +58,8 @@
       <%= yield %>
 
     <% end %>
+    
+
 
 
     <%= javascript_pack_tag 'home/common' %>
