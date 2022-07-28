@@ -5,7 +5,7 @@
         <p class="login-title">オンライン資料作成サービス</p>
         <%= image_tag 'logo_blue.svg', {class: 'login-logo'} %>
       </div>
-      <%= form_with model:@user, url: password_reset_path(@token), local: true, class: "login-form-box", method: :post do |f| %>
+      <%= form_with model:@user, url: password_reset_path(@token), local: true, class: "login-form-box", method: :put do |f| %>
         <dl class="login-item">
           <dt class="login-label">メールアドレス</dt>
           <dd class="login-input"><%= f.text_field :email %></dd>
