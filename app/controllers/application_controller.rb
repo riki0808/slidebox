@@ -22,6 +22,11 @@ class ApplicationController < ActionController::Base
     ActionMailer::Base.default_url_options = { host: request.host_with_port }
   end
   
+  def not_authenticated
+    flash[:info] = 'ログインしてください'
+    redirect_to main_app.login_path #main_appのプレフィックスをつける
+  end
+  
   # def common_user
   #   common_user = User.find_by(user_id: current_user.id)
   # end

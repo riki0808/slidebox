@@ -11,9 +11,10 @@ User.create(
       name: "佐藤立樹", 
       email: "riki_sato@cone-ntm.com", 
       company: "株式会社CONE",
-      role: 1,
+      role: 2,
       password: "rikiriki88", 
-      password_confirmation: "rikiriki88"
+      password_confirmation: "rikiriki88",
+      admin: true
     },
     {
       name: "湯浅春樹", 
@@ -21,7 +22,8 @@ User.create(
       company: "株式会社CONE",
       role: 1,
       password: "rikiriki88", 
-      password_confirmation: "rikiriki88"
+      password_confirmation: "rikiriki88",
+      admin: true
     },
     {
       name: "佐々野力", 
@@ -29,7 +31,8 @@ User.create(
       company: "株式会社CONE",
       role: 1,
       password: "rikiriki88", 
-      password_confirmation: "rikiriki88"
+      password_confirmation: "rikiriki88",
+      admin: true
     },
     {
       name: "田中晴", 
@@ -37,7 +40,8 @@ User.create(
       company: "株式会社CONE",
       role: 1,
       password: "rikiriki88", 
-      password_confirmation: "rikiriki88"
+      password_confirmation: "rikiriki88",
+      admin: true
     },
     {
       name: "熊本羽那丸", 
@@ -45,7 +49,8 @@ User.create(
       company: "株式会社CONE",
       role: 1,
       password: "rikiriki88", 
-      password_confirmation: "rikiriki88"
+      password_confirmation: "rikiriki88",
+      admin: true
     },
     {
       name: "山口友貴", 
@@ -53,7 +58,7 @@ User.create(
       company: "株式会社CONE",
       role: 1,
       password: "rikiriki88", 
-      password_confirmation: "rikiriki88"
+      password_confirmation: "rikiriki88",
     }
   ]
 )
