@@ -8,7 +8,7 @@ class DocsController < ApplicationController
     @doc = Doc.new(doc_params)
     if @doc.save
       # binding.pry
-      FileUtils.cp(doc_params[:main].path, "/tmp/temp.pdf")
+      # FileUtils.cp(doc_params[:pptx].path, "/tmp/temp.pptx")
       RequestMailer.with(doc: @doc.id).request_email.deliver_later
       RequestMailer.with(doc: @doc.id).thanks_email.deliver_later
       redirect_to root_path
@@ -25,7 +25,7 @@ class DocsController < ApplicationController
 
   private
   def doc_params
-    params.require(:doc).permit(:user_id, :main, :sheet, :title, :size, :deadline, :detail).merge(user_id: current_user.id)
+    params.require(:doc).permit(:user_id, :main, :sheet, :title, :size, :deadline, :detail, :pptx).merge(user_id: current_user.id)
   end
 
 end

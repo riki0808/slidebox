@@ -3,9 +3,9 @@ class RequestMailer < ApplicationMailer
   def request_email
 
     @doc = Doc.find(params[:doc])
-    attachments[@doc.main.file.filename] = { 
-      :content => File.read("/tmp/temp.pdf")
-    }
+    # attachments[@doc.pptx.file.filename] = { 
+    #   :content => File.read("/tmp/temp.pptx")
+    # }
     mail(
       subject: 'slideboxの依頼がきたよっ',
       from: 's_riki@cone-ntm.com',

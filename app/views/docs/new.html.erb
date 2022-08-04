@@ -3,10 +3,17 @@
   <div class="doc-form_frame">
     <%= form_with model: @doc, class:"doc-form", id:"js-doc-form" do |f| %>
       <dl class="doc-form_item">
-        <dt class="doc-form_item-title">アップロード</dt>
+        <dt class="doc-form_item-title">PDFアップロード</dt>
         <dd>
           <label for="js-up-file" class="doc-form_item-desc-file-label" id="js-file-label">✚PDFをアップロードする</label>
           <%= f.file_field :main, class:"doc-form_item-desc doc-form_item-desc-file", id:"js-up-file" %>
+        </dd>
+      </dl>
+      <dl class="doc-form_item">
+        <dt class="doc-form_item-title">PowerPoitntアップロード</dt>
+        <dd>
+          <label for="js-up-file-pptx" class="doc-form_item-desc-file-label" id="js-file-label-pptx">✚pptxをアップロードする</label>
+          <%= f.file_field :pptx, class:"doc-form_item-desc doc-form_item-desc-file", id:"js-up-file-pptx" %>
         </dd>
       </dl>
       <dl class="doc-form_item">

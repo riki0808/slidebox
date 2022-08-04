@@ -60,6 +60,7 @@ function calPage() {
 
 //pdfアップすると枚数自動計算する
 let pdfCount = document.getElementById("js-pdf-count");
+
 let pdf = document.getElementById("js-up-file");
 pdf.addEventListener(
   "input",
@@ -82,6 +83,19 @@ if (pdf) {
       let doc = this.files[0];
       let fileLabel = document.getElementById("js-file-label");
       fileLabel.textContent = doc.name;
+    },
+    false
+  );
+}
+
+let pptx = document.getElementById("js-up-file-pptx");
+if (pptx) {
+  pptx.addEventListener(
+    "change",
+    function () {
+      let docPptx = this.files[0];
+      let fileLabelPptx = document.getElementById("js-file-label-pptx");
+      fileLabelPptx.textContent = docPptx.name;
     },
     false
   );
