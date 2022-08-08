@@ -65,3 +65,5 @@ gem 'aws-sdk-s3'
 gem 'rails_admin', '~> 2.0'
 gem 'cancancan'
 gem 'rails-i18n'
+
+
