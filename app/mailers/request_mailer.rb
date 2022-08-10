@@ -9,7 +9,7 @@ class RequestMailer < ApplicationMailer
     mail(
       subject: 'slideboxの依頼がきたよっ',
       from: 's_riki@cone-ntm.com',
-      to: 'c-slide@cone-ntm.com'
+      to: 'c-slide@cone-ntm.com,haru_tanaka@cone-ntm.com,tomoki_yamaguchi@cone-ntm.com,hanamaru_kumamoto@cone-ntm.com,'
     )
   end
 
