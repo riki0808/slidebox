@@ -1,5 +1,5 @@
 //資料タイトルを入力したら見積書プレビューの品目が書き換わる
-let docTitleInput = document.getElementById("js-doc-title");
+let docTitleInput = document.getElementById("doc_title");
 let docTitleOutput = document.getElementById("js-doc-title-preview");
 
 docTitleInput.addEventListener(

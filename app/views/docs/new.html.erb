@@ -5,22 +5,42 @@
       <dl class="doc-form_item">
         <dt class="doc-form_item-title">PDFアップロード</dt>
         <dd>
-          <label for="js-up-file" class="doc-form_item-desc-file-label" id="js-file-label">✚PDFをアップロードする</label>
+          <label for="js-up-file" class="doc-form_item-desc-file-label" id="js-file-label"><%= image_tag 'pdf.png', {class: 'doc-form_icon'} %>PDFをアップロードする</label>
           <%= f.file_field :main, class:"doc-form_item-desc doc-form_item-desc-file", id:"js-up-file" %>
         </dd>
       </dl>
 
-      <dl class="doc-form_item">
-        <dt class="doc-form_item-title">PowerPoitntアップロード</dt>
-        <dd>
-          <label for="js-up-file-pptx" class="doc-form_item-desc-file-label" id="js-file-label-pptx">✚pptxをアップロードする</label>
-          <%= f.file_field :pptx, class:"doc-form_item-desc doc-form_item-desc-file", id:"js-up-file-pptx" %>
-        </dd>
-      </dl>
+      <div class="doc-form_item-file-flex">
+      
+        <dl class="doc-form_item doc-form_item-file-w">
+          <dt class="doc-form_item-title">PowerPoitntアップロード</dt>
+          <dd>
+            <label for="js-up-file-pptx" class="doc-form_item-desc-file-label" id="js-file-label-pptx"><%= image_tag 'powerpoint.png', {class: 'doc-form_icon'} %>pptxをアップロードする</label>
+            <%= f.file_field :pptx, class:"doc-form_item-desc doc-form_item-desc-file", id:"js-up-file-pptx" %>
+          </dd>
+        </dl>
+
+        <dl class="doc-form_item doc-form_item-file-w">
+          <dt class="doc-form_item-title">Googleスライドアップロード</dt>
+          <dd><%= f.text_field :g_slide, class:"doc-form_item-desc-g_slide doc-form_item-desc-text", placeholder:"共有用リンクの貼り付け" %></dd>
+        </dl>
+      
+      </div>
+
 
       <dl class="doc-form_item">
         <dt class="doc-form_item-title">資料ジャンル</dt>
-        <dd><%= f.text_field :title, class:"doc-form_item-desc doc-form_item-desc-text", id:"js-doc-title", placeholder:"作りたい資料ジャンルを入力してください" %></dd>
+        <dd><%= f.select :title, [
+        ["会社紹介資料", "会社紹介資料"],
+        ["ウェビナー資料", "ウェビナー資料"],
+        ["提案資料", "提案資料"],
+        ["採用ピッチ資料", "採用ピッチ資料"],
+        ["サービス紹介資料", "サービス紹介資料"],
+        ["ホワイトペーパー", "ホワイトペーパー"],
+        ["株主向けIR資料", "株主向けIR資料"],
+        ["社内向け資料", "社内向け資料"],
+        ["その他", "その他"]
+        ], include_blank: "選択して下さい" %></dd>
       </dl>
 
       <dl class="doc-form_item">
@@ -37,6 +57,35 @@
       <div class="doc-form_line"></div>
 
       <dl class="doc-form_item">
+        <dt class="doc-form_item-title">資料の内容・概要</dt>
+        <dd><%= f.text_area :content, class:"doc-form_item-desc doc-form_item-desc-textarea", placeholder:"(例)セールスの際にサービスの内容、サービスを利用した時のメリットを図解を用いて説明している" %></dd>
+      </dl>
+
+      <dl class="doc-form_item">
+        <dt class="doc-form_item-title">資料の活用場面</dt>
+        <dd><%= f.text_field :scene, class:"doc-form_item-desc doc-form_item-desc-text", placeholder:"(例)WEB商談時の提案の時に" %></dd>
+      </dl>
+
+      <dl class="doc-form_item">
+        <dt class="doc-form_item-title">資料を見せる相手</dt>
+        <dd><%= f.text_field :shower, class:"doc-form_item-desc doc-form_item-desc-text", placeholder:"(例)新規クライアント向け" %></dd>
+      </dl>
+
+      <dl class="doc-form_item">
+        <dt class="doc-form_item-title">重複している内容の削除や調整をしてもよろしいですか？</dt>
+        <dd class="doc-form_item-desc doc-form_item-desc-size">
+          <div>
+            <%= f.radio_button :deplication, "OK" %>
+            <%= f.label :deplication, "OK", {style: "display: inline-block;"} %>
+          </div>
+          <div>
+            <%= f.radio_button :deplication, "NG" %>
+            <%= f.label :deplication, "NG", {style: "display: inline-block;"} %>
+          </div>
+        </dd>
+      </dl>
+
+      <dl class="doc-form_item">
         <dt class="doc-form_item-title">サイズ</dt>
         <dd class="doc-form_item-desc doc-form_item-desc-size">
           <div>
@@ -49,6 +98,69 @@
           </div>
         </dd>
       </dl>
+
+      <dl class="doc-form_item">
+        <dt class="doc-form_item-title">納品形式</dt>
+        <dd class="doc-form_item-desc doc-form_item-desc-size">
+          <div>
+            <%= f.radio_button :format, "PowerPoint" %>
+            <%= f.label :format, "PowerPoint", {style: "display: inline-block;"} %>
+          </div>
+          <div>
+            <%= f.radio_button :format, "Googleスライド" %>
+            <%= f.label :format, "Googleスライド", {style: "display: inline-block;"} %>
+          </div>
+        </dd>
+      </dl>
+
+
+      <dl class="doc-form_item">
+        <dt class="doc-form_item-title">フォント</dt>
+        <dd class="doc-form_item-desc doc-form_item-desc-size" style="flex-wrap:wrap">
+          <div>
+            <%= f.radio_button :font, "游ゴシック" %>
+            <%= f.label :font, "游ゴシック", {style: "display: inline-block;"} %>
+          </div>
+          <div>
+            <%= f.radio_button :font, "メイリオ" %>
+            <%= f.label :font, "メイリオ", {style: "display: inline-block;"} %>
+          </div>
+          <div>
+            <%= f.radio_button :font, "Meiryo UI" %>
+            <%= f.label :font, "Meiryo UI", {style: "display: inline-block;"} %>
+          </div>
+          <div>
+            <%= f.radio_button :font, "コーポレートロゴ" %>
+            <%= f.label :font, "コーポレートロゴ", {style: "display: inline-block;"} %>
+          </div>
+          <div>
+            <%= f.radio_button :font, "おまかせ" %>
+            <%= f.label :font, "おまかせ", {style: "display: inline-block;"} %>
+          </div>
+        </dd>
+      </dl>
+
+      <div class="doc-form_color-frame">
+
+        <p class="doc-form_color-frame-title">※色の指定がなければ元の資料から抜粋します</p>
+      
+        <dl class="doc-form">
+          <dt class="doc-form_title">
+            <p class="doc-form_title-text">メインカラー</p>
+            <input type="color" class="doc-form_title-color" id="js-main-pick">
+          </dt>
+          <dd><%= f.text_field :main_color, class:"doc-form_desc", id:"js-main-code" %></dd>
+        </dl>
+
+        <dl class="doc-form">
+          <dt class="doc-form_title">
+            <p class="doc-form_title-text">アクセントカラー</p>
+            <input type="color" class="doc-form_title-color" id="js-sub-pick">
+          </dt>
+          <dd><%= f.text_field :sub_color, class:"doc-form_desc", id:"js-sub-code" %></dd>
+        </dl>
+
+      </div>
 
       <dl class="doc-form_item">
         <dt class="doc-form_item-title">依頼内容詳細</dt>

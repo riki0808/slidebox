@@ -4,7 +4,7 @@
 <%= @doc.user.name %>様
 
 お世話になっております。
-資料作成代行サービス「slidebox」を運営する、株式会社CONEの佐藤と申します。
+資料作成代行サービス「slidebox」を運営する、株式会社CONEの熊本と申します。
 
 
 この度はご依頼頂きまして、誠にありがとうございます。
@@ -12,17 +12,37 @@
 
 ==============================================
 
-依頼者名：<%= @doc.user.name %>
+お名前：<%= @doc.user.name %>
 
 会社名：<%= @doc.user.company %>
 
-依頼者メールアドレス：<%= @doc.user.email %>
+メールアドレス：<%= @doc.user.email %>
+
+Google Slide：<%= @doc.g_slide %>
+
+資料ジャンル：<%= @doc.title %>
 
 依頼枚数：<%= @doc.sheet %>
 
+希望納期：<%= @doc.deadline %>
+
+資料の内容・概要：<%= @doc.content %>
+
+資料の活用場面：<%= @doc.scene %>
+
+資料を見せる相手：<%= @doc.shower %>
+
+重複している内容の削除や調整をしてもよろしいですか？：<%= @doc.deplication %>
+
 サイズ：<%= @doc.size %>
 
-希望納期：<%= @doc.deadline %>
+納品形式：<%= @doc.format %>
+
+フォント：<%= @doc.font %>
+
+メインカラー：<%= @doc.main_color %>
+
+アクセントカラー：<%= @doc.sub_color %>
 
 依頼内容詳細：<%= @doc.detail %>
 
@@ -38,4 +58,4 @@
 引き続き何卒よろしくお願い致します。
 
 
-※自動返信となっておりますので、御用の方は、riki_sato@cone-ntm.comまでお願い致します。
+※自動返信となっておりますので、御用の方は、hanamaru_kumamoto@cone-ntm.comまでお願い致します。

@@ -147,6 +147,7 @@ p {
 .p-nav-global.is-active {
   opacity: 1;
   visibility: visible;
+  z-index: 100;
 }
 .p-nav-global_item:hover  {
   background-color:#e6e6e6 ;
@@ -192,6 +193,7 @@ p {
   width: 256px;
   background-color: #f3f4f6;
 }
+
 .c-sidebar_item {
   color: #1a1a1a;
   display: block;
@@ -219,4 +221,11 @@ p {
   width: calc(100% - 256px);
   padding: 40px;
   min-height: calc(100vh - 60px);
+}
+
+
+@media screen and (max-width: 1350px) {
+  .c-sidebar {
+    width: 190px;
+  }
 }
