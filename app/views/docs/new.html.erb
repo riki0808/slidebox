@@ -9,6 +9,7 @@
           <%= f.file_field :main, class:"doc-form_item-desc doc-form_item-desc-file", id:"js-up-file" %>
         </dd>
       </dl>
+
       <dl class="doc-form_item">
         <dt class="doc-form_item-title">PowerPoitntアップロード</dt>
         <dd>
@@ -16,14 +17,21 @@
           <%= f.file_field :pptx, class:"doc-form_item-desc doc-form_item-desc-file", id:"js-up-file-pptx" %>
         </dd>
       </dl>
+
       <dl class="doc-form_item">
-        <dt class="doc-form_item-title">資料タイトル</dt>
+        <dt class="doc-form_item-title">資料ジャンル</dt>
         <dd><%= f.text_field :title, class:"doc-form_item-desc doc-form_item-desc-text", id:"js-doc-title", placeholder:"作りたい資料ジャンルを入力してください" %></dd>
       </dl>
+
       <dl class="doc-form_item">
         <dt class="doc-form_item-title">資料枚数(自動計算)</dt>
         <dd><span class="doc-form_item-desc doc-form_item-desc-sheet" id="js-pdf-count"></span>枚</dd>
         <%= f.number_field :sheet, class:"doc-form_item-desc-sheet-hidden", id:"js-hidden-pdf-count" %>
+      </dl>
+
+      <dl class="doc-form_item">
+        <dt class="doc-form_item-title">納期</dt>
+        <dd><%= f.date_field :deadline, class:"doc-form_item-desc doc-form_item-desc-text", id:"js-deadline-input" %></dd>
       </dl>
 
       <div class="doc-form_line"></div>
@@ -41,10 +49,7 @@
           </div>
         </dd>
       </dl>
-      <dl class="doc-form_item">
-        <dt class="doc-form_item-title">納期</dt>
-        <dd><%= f.date_field :deadline, class:"doc-form_item-desc doc-form_item-desc-text", id:"js-deadline-input" %></dd>
-      </dl>
+
       <dl class="doc-form_item">
         <dt class="doc-form_item-title">依頼内容詳細</dt>
         <dd><%= f.text_area :detail, class:"doc-form_item-desc doc-form_item-desc-textarea" %></dd>

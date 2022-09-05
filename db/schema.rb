@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_03_092617) do
+ActiveRecord::Schema.define(version: 2022_09_05_093858) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,15 @@ ActiveRecord::Schema.define(version: 2022_08_03_092617) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "size"
     t.string "pptx"
+    t.string "g_slide"
+    t.string "content"
+    t.string "scene"
+    t.string "shower"
+    t.string "deplication"
+    t.string "format"
+    t.string "main_color"
+    t.string "sub_color"
+    t.string "font"
   end
 
   create_table "settings", force: :cascade do |t|
