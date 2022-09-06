@@ -104,6 +104,25 @@ if (pptx) {
 
 let docSubmit = document.getElementById("js-doc-submit");
 
+// docSubmit.onclick = function (e) {
+//   e.preventDefault();
+//   let docForm = document.getElementById("js-doc-form");
+//   let options = {
+//     text: "見積書のダウンロードはしましたか？", //\nでテキストの改行が出来ます
+//     buttons: {
+//       cancel: "まだ！",
+//       ok: "依頼する！",
+//     },
+//   };
+//   swal(options).then(function (value) {
+//     if (value) {
+//       swal('依頼完了しました！').then(function () {
+//         docForm.submit();
+//       });
+//     }
+//   });
+// };
+
 docSubmit.onclick = function (e) {
   e.preventDefault();
   let docForm = document.getElementById("js-doc-form");
@@ -115,10 +134,11 @@ docSubmit.onclick = function (e) {
     },
   };
   swal(options).then(function (value) {
-    if (value) {
-      swal('依頼完了しました！').then(function () {
-        docForm.submit();
-      });
-    }
+    docForm.submit();
+    window.addEventListener('load', function() {
+      if (value) {
+        swal('依頼完了しました！');
+      }
+    });
   });
 };

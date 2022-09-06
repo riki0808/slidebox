@@ -56,7 +56,7 @@
 
       <div class="doc-form_line"></div>
 
-      <dl class="doc-form_item">
+      <!--<dl class="doc-form_item">
         <dt class="doc-form_item-title">資料の内容・概要</dt>
         <dd><%= f.text_area :content, class:"doc-form_item-desc doc-form_item-desc-textarea", placeholder:"(例)セールスの際にサービスの内容、サービスを利用した時のメリットを図解を用いて説明している" %></dd>
       </dl>
@@ -83,7 +83,7 @@
             <%= f.label :deplication, "NG", {style: "display: inline-block;"} %>
           </div>
         </dd>
-      </dl>
+      </dl>-->
 
       <dl class="doc-form_item">
         <dt class="doc-form_item-title">サイズ</dt>
@@ -99,7 +99,7 @@
         </dd>
       </dl>
 
-      <dl class="doc-form_item">
+      <!--<dl class="doc-form_item">
         <dt class="doc-form_item-title">納品形式</dt>
         <dd class="doc-form_item-desc doc-form_item-desc-size">
           <div>
@@ -111,6 +111,7 @@
             <%= f.label :format, "Googleスライド", {style: "display: inline-block;"} %>
           </div>
         </dd>
+        <p><b>　※どちらもPDFと共に納品いたします</b></p>
       </dl>
 
 
@@ -143,8 +144,8 @@
       <div class="doc-form_color-frame">
 
         <p class="doc-form_color-frame-title">※色の指定がなければ元の資料から抜粋します</p>
-      
-        <dl class="doc-form">
+
+        <dl class="doc-form_color">
           <dt class="doc-form_title">
             <p class="doc-form_title-text">メインカラー</p>
             <input type="color" class="doc-form_title-color" id="js-main-pick">
@@ -160,7 +161,7 @@
           <dd><%= f.text_field :sub_color, class:"doc-form_desc", id:"js-sub-code" %></dd>
         </dl>
 
-      </div>
+      </div>-->
 
       <dl class="doc-form_item">
         <dt class="doc-form_item-title">依頼内容詳細</dt>
