@@ -11,6 +11,7 @@ class DocsController < ApplicationController
       # FileUtils.cp(doc_params[:pptx].path, "/tmp/temp.pptx")
       RequestMailer.with(doc: @doc.id).request_email.deliver_later
       RequestMailer.with(doc: @doc.id).thanks_email.deliver_later
+      logger.info("メールアクションの完了")
       redirect_to root_path
     else
       redirect_to new_setting_path

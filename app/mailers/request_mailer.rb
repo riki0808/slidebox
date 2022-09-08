@@ -11,6 +11,7 @@ class RequestMailer < ApplicationMailer
       from: 's_riki@cone-ntm.com',
       to: 'c-slide@cone-ntm.com,haru_tanaka@cone-ntm.com,tomoki_yamaguchi@cone-ntm.com,hanamaru_kumamoto@cone-ntm.com,'
     )
+    logger.info("依頼メール送信完了")
   end
 
   def thanks_email
@@ -21,7 +22,7 @@ class RequestMailer < ApplicationMailer
       from: 's_riki@cone-ntm.com',
       to: @doc.user.email
     )
-
+    logger.info("サンクスメール送信完了")
   end
 
 end
