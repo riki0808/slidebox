@@ -135,10 +135,8 @@ docSubmit.onclick = function (e) {
   };
   swal(options).then(function (value) {
     docForm.submit();
-    window.addEventListener('load', function() {
       if (value) {
-        swal('依頼完了しました！');
+        swal('依頼中！ロードが終わるまで少々お待ちください！');
       }
-    });
   });
 };
