@@ -59,3 +59,11 @@ function changeColor(code, color) {
 
 changeColor(mainColorCode, mainColorPick);
 changeColor(subColorCode, subColorPick);
+
+
+let today = new Date();
+today.setDate(today.getDate()+2);
+
+let term = document.getElementById('js-deadline-input');
+
+term.setAttribute('min', today.toISOString().substr(0,10));
