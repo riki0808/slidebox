@@ -223,9 +223,24 @@ p {
   min-height: calc(100vh - 60px);
 }
 
-
+.sp-attention {
+  display: none;
+}
 @media screen and (max-width: 1350px) {
   .c-sidebar {
     width: 190px;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .c-inner {
+    display: none;
+  }
+  .sp-attention {
+    display: block;
+    padding: 5%;
+  }
+  .p-nav-right {
+    display: none;
   }
 }

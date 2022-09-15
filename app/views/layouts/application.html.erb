@@ -18,6 +18,7 @@
     <% unless current_page?(login_path) || current_page?(new_password_reset_path) || (@token && current_page?(:controller => 'password_resets', :action => 'edit', :id => @token)) %>
       <%= render 'partial/navbar' %>
 
+      <p class="sp-attention">1200px以下のデバイスには対応しておりません。</p>
       <div class="c-inner">
       
         <div class="c-wrap">
